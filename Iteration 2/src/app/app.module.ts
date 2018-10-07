@@ -1,12 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Injectable } from '@angular/core';
 import { PhoneService } from './phone.service';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
-
 import { PhonesComponent } from './phones/phones.component';
 import { PlansComponent } from './plans/plans.component';
 import { CartComponent } from './cart/cart.component';
@@ -25,7 +22,7 @@ import { PhoneDetailsComponent } from './phone-details/phone-details.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule,
   ],
   providers: [
     PhoneService
