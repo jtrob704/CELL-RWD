@@ -1,0 +1,9 @@
+<p>
+  {{phone.title}} (${{phone.price}})
+</p>
+<p>
+  {{phone.tagline}}
+</p>
+<button class="btn btn-primary" (click)="addToCart(phone)" [disabled]="isInCart(phone)"> <span class="glyphicon
+    glyphicon-remove"></span>Add
+  to Cart</button>
