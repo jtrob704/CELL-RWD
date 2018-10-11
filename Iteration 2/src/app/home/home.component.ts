@@ -21,6 +21,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.phoneService.getAllPhones().subscribe(phones => this.phones = phones, err => console.log(err));
+    this.phoneService.getAllPhones().subscribe(phones => this.phones = phones, err => console.log(err));
   }
 }

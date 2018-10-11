@@ -1,1 +1,13 @@
-<h1>Phones!</h1>
+<div class="card-deck">
+    <div class="card" *ngFor="let phone of phones">
+        <img class="card-img-top" src="{{phone.img}}" alt="{{phone.title}}" (click)="navigateTo('/details/'+phone.id)">
+        <div class="card-body text-center">
+            <h5 class="card-title" (click)="navigateTo('/details/'+phone.id)">{{phone.title}}</h5>
+            <p class="card-text">{{phone.tagline}}</p>
+            <h5 class="card-text">${{phone.price}}</h5>
+            <div class="text-center">
+                <button class="btn btn-primary"> <span class="glyphicon glyphicon-remove"></span>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>

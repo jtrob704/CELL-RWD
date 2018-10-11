@@ -1,9 +1,9 @@
 <ngb-carousel *ngIf="phones">
   <ng-template ngbSlide *ngFor="let phone of phones">
     <img src="{{phone.img}}" alt="{{phone.title}}" style="display: block; width: 100%;" (click)="navigateTo('/details/'+phone.id)">
-    <div class="carousel-caption d-none d-md-block" (click)="navigateTo('/details/'+phone.id)">
+    <div class="carousel-caption" (click)="navigateTo('/details/'+phone.id)">
       <h3>{{phone.title}}</h3>
       <p>{{phone.tagline}}</p>
     </div>
   </ng-template>
-  </ngb-carousel>
+</ngb-carousel>
