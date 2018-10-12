@@ -1,3 +1,7 @@
+<div class="search-box">
+    <input id="filter" type="text" placeholder="Search" />
+    <i id="filtersubmit" class="fa fa-search"></i>
+</div>
 <div class="card-deck">
     <div class="card" *ngFor="let phone of phones">
         <img class="card-img-top" src="{{phone.img}}" alt="{{phone.title}}" (click)="navigateTo('/details/'+phone.id)">
