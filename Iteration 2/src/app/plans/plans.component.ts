@@ -16,10 +16,6 @@ export class PlansComponent implements OnInit {
 
   constructor(private planService: PlanService, private router: Router) { }
 
-  navigateTo(route: string): void {
-    this.router.navigate([route]);
-  }
-
   ngOnInit() {
     this.planService.getAllPlans().subscribe(plans => this.plans = plans, err => console.log(err));
   }
