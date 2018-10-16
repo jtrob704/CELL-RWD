@@ -1,9 +1,18 @@
-<p>
-  {{phone.title}} (${{phone.price}})
-</p>
-<p>
-  {{phone.tagline}}
-</p>
-<button class="btn btn-primary" (click)="addToCart(phone)" [disabled]="isInCart(phone)"> <span class="glyphicon
-    glyphicon-remove"></span>Add
-  to Cart</button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 text-center" id="img-container">
+      <h2 id="title">{{phone.title}}</h2>
+      <img class="phone-img img-fluid" src="{{phone.img}}" alt="{{phone.title}}">
+    </div>
+    <div class="col-md-4 text-center" id="feature-list">
+      <h3 id="price">Price: ${{phone.price}}</h3>
+      <h3 id="features">Features</h3>
+      <h4>Color: {{phone.color}} <span style.backgroundColor={{phone.color}} class="dot"></span></h4>
+      <h4>Capacity: {{phone.capacity}} GB</h4>
+      <h4>Condition: {{phone.condition}}</h4>
+      <button class="btn btn-primary" id="cart-button" (click)="addToCart(phone)" [disabled]="isInCart(phone)"> <span class="glyphicon
+        glyphicon-remove"></span>Add
+        to Cart</button>
+    </div>
+  </div>
+</div>

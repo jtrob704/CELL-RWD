@@ -1,7 +1,7 @@
-<input id="search-box" class="form-control" type="search" placeholder="Search Phones">
+<input id="search-box" class="form-control shadow-none rounded" type="search" placeholder="Search Phones">
 <i id="filtersubmit" class="fa fa-search"></i>
 <div class="card-deck">
-    <div class="card" *ngFor="let phone of phones">
+    <div class="card shadow" *ngFor="let phone of phones">
         <img class="card-img-top" src="{{phone.img}}" alt="{{phone.title}}" (click)="navigateTo('/details/'+phone.id)">
         <div class="card-body text-center">
             <h5 class="card-title" (click)="navigateTo('/details/'+phone.id)">{{phone.title}}</h5>

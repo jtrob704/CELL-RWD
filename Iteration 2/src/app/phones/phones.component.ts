@@ -26,10 +26,16 @@ export class PhonesComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    $.extend($.expr[':'], {
+      'containsIN': function(elem, i, match, array) {
+      return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || '').toLowerCase()) >= 0;
+      }
+      });
+
     $('#search-box').keyup(function () {
       $('.card').removeClass('d-none');
       const keyword = $(this).val();
-      $('.card-deck').find('.card-title:not(:contains("' + keyword + '"))').parent().parent().addClass('d-none');
+      $('.card-deck').find('.card-title:not(:containsIN("' + keyword + '"))').parent().parent().addClass('d-none');
     });
   }
 }
