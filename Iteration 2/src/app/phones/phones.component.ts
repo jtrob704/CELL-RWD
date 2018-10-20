@@ -35,7 +35,7 @@ export class PhonesComponent implements OnInit, AfterViewInit {
     $('#search-box').keyup(function () {
       $('.card').removeClass('d-none');
       const keyword = $(this).val();
-      $('.card-deck').find('.card-title:not(:containsIN("' + keyword + '"))').parent().parent().addClass('d-none');
+      $('.row').find('.card-title:not(:containsIN("' + keyword + '"))').parent().parent().addClass('d-none');
     });
   }
 }

@@ -1,14 +1,16 @@
 <input id="search-box" class="form-control shadow-none rounded" type="search" placeholder="Search Phones">
 <i id="filtersubmit" class="fa fa-search"></i>
-<div class="card-deck">
-    <div class="card shadow" *ngFor="let phone of phones">
-        <img class="card-img-top" src="{{phone.img}}" alt="{{phone.title}}" (click)="navigateTo('/details/'+phone.id)">
-        <div class="card-body text-center">
-            <h5 class="card-title" (click)="navigateTo('/details/'+phone.id)">{{phone.title}}</h5>
-            <p class="card-text">{{phone.tagline}}</p>
-            <h5 class="card-text">${{phone.price}}</h5>
-            <div class="text-center">
-                <button class="btn btn-primary"> <span class="glyphicon glyphicon-remove"></span>Add to Cart</button>
+<div class="row">
+    <div class="col-lg-4" *ngFor="let phone of phones">
+        <div class="card shadow">
+            <img class="card-img-top" src="{{phone.img}}" alt="{{phone.title}}" (click)="navigateTo('/details/'+phone.id)">
+            <div class="card-body text-center">
+                <h5 class="card-title" (click)="navigateTo('/details/'+phone.id)">{{phone.title}}</h5>
+                <p class="card-text">{{phone.tagline}}</p>
+                <h5 class="card-text">${{phone.price}}</h5>
+                <div class="text-center">
+                    <button class="btn btn-primary"> <span class="glyphicon glyphicon-remove"></span>Add to Cart</button>
+                </div>
             </div>
         </div>
     </div>
