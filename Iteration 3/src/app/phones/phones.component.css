@@ -1,0 +1,35 @@
+@media (max-width: 950px) { 	
+
+   #search-box {
+        z-index: 1;
+        position: absolute;        
+        top: 5em;
+        left: 2.5em;
+        width: 20em;
+    }
+    
+    #filtersubmit {
+        display: none;
+    }
+}
+
+.card {
+    margin-top: 5em;
+}
+
+#filtersubmit {
+    position: relative;  
+    float: right;        
+    z-index: 1;
+    left: 18.5em;
+    top: 0.7em;
+    color: #7B7B7B;
+    cursor:pointer;
+    width: 0;
+}
+
+#search-box {
+    float: right;
+    width: 20em;        
+    border-color: #7B7B7B;
+}

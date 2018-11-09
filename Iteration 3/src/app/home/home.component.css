@@ -1,0 +1,36 @@
+.container {
+    padding-top: 5em;
+}
+
+.carousel {
+    outline: none !important;
+}
+
+.carousel-caption {
+    color: #000;
+    position: relative;
+    left: unset;
+    bottom: unset;
+    right: unset;
+}
+
+.carousel-control-prev-icon {
+    background-image: url('../../assets/images/seta_prim.png') !important;
+    cursor: pointer;
+}
+
+.carousel-control-next-icon {
+    background-image: url('../../assets/images/seta_ult.png') !important;
+    cursor: pointer;
+}
+
+.carousel-indicators li {
+    background-color: #d5d5d5 !important;
+    cursor: pointer;
+}
+
+.carousel-indicators li.active {
+    background-color: #000 !important;
+    cursor: pointer;
+}
+

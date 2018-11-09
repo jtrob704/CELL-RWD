@@ -1,0 +1,16 @@
+<div class="card-deck">
+    <div class="card shadow" *ngFor="let plan of plans">
+        <div class="card-body text-center">
+            <img class="card-img-top" src="src\assets\images\phone-plan.png" alt="phone plan">
+            <h3>{{plan.title}}</h3>
+            <h1>${{plan.price}}/mo.</h1>
+            <ul class="fa-ul text-left">
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>{{plan.minutes}} minutes of voice</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>{{plan.data_p}} GB of data</li>
+            </ul>
+            <div class="text-center">
+                <button class="btn btn-primary"> <span class="glyphicon glyphicon-remove"></span>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
