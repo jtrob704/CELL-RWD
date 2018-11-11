@@ -7,7 +7,7 @@ import { Phone } from './phone';
 })
 export class CartService {
   phones: Phone[] = [];
-  total: 0;
+
   constructor() { }
 
   add(phone: Phone): void {
@@ -29,9 +29,6 @@ export class CartService {
   }
   getAll(): Observable<Phone[]> {
     return of(this.phones);
-  }
-  getTotal(phone: Phone) {
-    return this.total += phone.price;
   }
   empty(): void {
     this.phones = [];

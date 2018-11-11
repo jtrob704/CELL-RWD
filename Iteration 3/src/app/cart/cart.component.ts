@@ -1,5 +1,6 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as $ from 'jquery';
 import { CartService } from '../cart.service';
 import { Phone } from '../phone';
 
@@ -36,5 +37,9 @@ export class CartComponent implements OnInit {
       this.phones = [];
       console.error(err);
     });
+  }
+  getCartTotal(): number {
+    const quantity = 1;
+    return this.phones.map(phone => phone.price * quantity).reduce((a, b) => a + b, 0);
   }
 }
