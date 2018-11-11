@@ -1,5 +1,4 @@
 import { Component, OnInit, } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from 'jquery';
 import { CartService } from '../cart.service';
 import { Phone } from '../phone';
@@ -15,7 +14,7 @@ export class CartComponent implements OnInit {
   phones: Phone[];
   total = 0;
 
-  constructor(private cartService: CartService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
     this.cartService.getAll().subscribe(data => {
