@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PhoneService } from './phone.service';
 import { CartService } from './cart.service';
@@ -23,6 +24,7 @@ import { PhoneDetailsComponent } from './phone-details/phone-details.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     NgbModule,
   ],
   providers: [

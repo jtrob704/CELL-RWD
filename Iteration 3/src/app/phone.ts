@@ -9,4 +9,5 @@ export class Phone {
     condition: string;
     capacity: string;
     color: SafeStyle;
+    quantity: number;
 }
