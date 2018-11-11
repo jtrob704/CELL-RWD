@@ -12,7 +12,6 @@ import { Phone } from '../phone';
 export class CartComponent implements OnInit {
   title = 'cart';
   phones: Phone[];
-  total = 0;
 
   constructor(private cartService: CartService) { }
 
