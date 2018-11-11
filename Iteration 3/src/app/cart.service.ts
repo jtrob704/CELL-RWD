@@ -31,9 +31,6 @@ export class CartService {
   getAll(): Observable<Phone[]> {
     return of(this.phones);
   }
-  getTotal(phone: Phone): number {
-    return this.phones.map(phones => phone.price * phone.quantity).reduce((a, b) => a + b, 0);
-  }
   empty(): void {
     this.phones = [];
   }
