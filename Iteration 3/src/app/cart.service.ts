@@ -17,6 +17,7 @@ export class CartService {
     }
   }
   remove(phone: Phone): void {
+    phone.quantity = 0;
     this.removeById(phone.id);
   }
   removeById(id: number): void {
@@ -32,6 +33,9 @@ export class CartService {
     return of(this.phones);
   }
   empty(): void {
+    this.phones.forEach(phone => {
+      phone.quantity = 0;
+    });
     this.phones = [];
   }
 }
