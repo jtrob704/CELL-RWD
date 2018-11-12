@@ -37,6 +37,6 @@ export class CartComponent implements OnInit {
     });
   }
   getCartTotal(): number {
-        return this.phones.map(phone => phone.price * phone.quantity).reduce((a, b) => a + b, 0);
+    return this.phones.map(phone => phone.price * phone.quantity).reduce((a, b) => a + b, 0);
   }
 }
