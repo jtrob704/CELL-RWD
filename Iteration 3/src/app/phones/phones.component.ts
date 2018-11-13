@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import * as $ from 'jquery';
 import { Phone } from '../phone';
 import { PhoneService } from '../phone.service';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-phones',
@@ -15,7 +16,7 @@ import { PhoneService } from '../phone.service';
 export class PhonesComponent implements OnInit, AfterViewInit {
   phones: Phone[];
 
-  constructor(private phoneService: PhoneService, private router: Router) { }
+  constructor(private phoneService: PhoneService, private router: Router, private cartService: CartService)  { }
 
   navigateTo(route: string): void {
     this.router.navigate([route]);
@@ -37,6 +38,13 @@ export class PhonesComponent implements OnInit, AfterViewInit {
       const keyword = $(this).val();
       $('.row').find('.card-title:not(:containsIN("' + keyword + '"))').parent().parent().addClass('d-none');
     });
+  }
+  isInCart(phone: Phone): boolean {
+    return this.cartService.existsInCart(phone);
+  }
+  addToCart(phone: Phone): void {
+    this.cartService.add(phone);
+    this.router.navigate(['cart']);
   }
 }
 

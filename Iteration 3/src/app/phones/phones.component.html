@@ -9,7 +9,8 @@
                 <p class="card-text">{{phone.tagline}}</p>
                 <h5 class="card-text">${{phone.price}}</h5>
                 <div class="text-center">
-                    <button class="btn btn-primary"> <span class="glyphicon glyphicon-remove"></span>Add to Cart</button>
+                    <button class="btn btn-primary" (click)="addToCart(phone)" [disabled]="isInCart(phone)"> <span
+                            class="glyphicon glyphicon-remove"></span>Add to Cart</button>
                 </div>
             </div>
         </div>
