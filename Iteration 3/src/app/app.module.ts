@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PhoneService } from './phone.service';
+import { PlanService } from './plan.service';
 import { CartService } from './cart.service';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -29,6 +30,7 @@ import { PhoneDetailsComponent } from './phone-details/phone-details.component';
   ],
   providers: [
     PhoneService,
+    PlanService,
     CartService,
   ],
   bootstrap: [AppComponent]
