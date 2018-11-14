@@ -16,7 +16,7 @@
                         <div class="col-sm-2 hidden-xs"><img src="{{phone.img}}" alt="{{phone.title}}" id="phone-thumb" /></div>
                         <div class="col-sm-10">
                             <h4 class="nomargin">{{phone.title}}</h4>
-                            <p>Capacity: {{phone.capacity}}, Condition: {{phone.condition}}, Color: {{phone.color}}</p>
+                            <p class="text-muted">Capacity: {{phone.capacity}} GB, Condition: {{phone.condition}}, Color: {{phone.color}}</p>
                         </div>
                     </div>
                 </td>
@@ -48,12 +48,12 @@
                         <div class="col-sm-2 hidden-xs"></div>
                         <div class="col-sm-10">
                             <h4 class="nomargin">{{plan.title}}</h4>
-                            <p>Minutes: {{plan.minutes}} Data Allowance: {{plan.data_p}} GB</p>
+                            <p class="text-muted">Minutes: {{plan.minutes}}, Data Allowance: {{plan.data_p}} GB</p>
                         </div>
                     </div>
                 </td>
-                <td data-th="Price">${{plan.price}}</td>
-                <td data-th="Subtotal" class="text-center">${{plan.price}}</td>
+                <td data-th="Price">${{plan.price}} /mo</td>
+                <td data-th="Subtotal" class="text-center">${{plan.price}} /mo</td>
                 <td class="actions" data-th="">
                     <button class="btn btn-danger btn-sm" (click)="removePlanFromCart(plan)"><i class="far fa-trash-alt"></i></button>
                 </td>
@@ -70,7 +70,7 @@
                 <td> <button class="btn btn-danger" (click)="empty();" type="button">Empty shopping
                         cart</button></td>
                 <td colspan="2" class="hidden-xs"></td>
-                <td><button type="button" class="btn btn-success">Proceed To Checkout</button></td>
+                <td><button type="button" class="btn btn-primary" (click)="gotoCheckout();">Proceed To Checkout</button></td>
             </tr>
         </tfoot>
     </table>

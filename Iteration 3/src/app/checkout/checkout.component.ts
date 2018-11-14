@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
 import { CartService } from '../cart.service';
@@ -6,13 +6,12 @@ import { Phone } from '../phone';
 import { Plan } from '../plan';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  selector: 'app-checkout',
+  templateUrl: './checkout.component.html',
+  styleUrls: ['./checkout.component.css']
 })
-
-export class CartComponent implements OnInit {
-  title = 'cart';
+export class CheckoutComponent implements OnInit {
+  title = 'checkout';
   phones: Phone[];
   plans: Plan[];
 
@@ -36,28 +35,29 @@ export class CartComponent implements OnInit {
       console.error(err);
     });
   }
-  empty(): void {
-    this.cartService.empty();
-    this.phones = [];
-    this.plans = [];
+  gotoCart(): void {
+    this.router.navigate(['cart']);
   }
-  removeFromCart(phone: Phone): void {
-    this.cartService.remove(phone);
-    this.cartService.getAll().subscribe(data => {
-      this.phones = data;
-    }, err => {
-      this.phones = [];
-      console.error(err);
-    });
-  }
-  removePlanFromCart(plan: Plan): void {
-    this.cartService.removePlan(plan);
-    this.cartService.getAllPlans().subscribe(data => {
-      this.plans = data;
-    }, err => {
-      this.plans = [];
-      console.error(err);
-    });
+  submitOrder(): void {
+    (function () {
+      'use strict';
+
+      window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.getElementsByClassName('needs-validation');
+
+        // Loop over them and prevent submission
+        Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    }());
   }
   getCartTotal(): number {
     return this.phones.map(phone => phone.price * phone.quantity).reduce((a, b) => a + b, 0);
@@ -68,8 +68,5 @@ export class CartComponent implements OnInit {
     } else {
       return 0;
     }
-  }
-  gotoCheckout(): void {
-    this.router.navigate(['checkout']);
   }
 }
